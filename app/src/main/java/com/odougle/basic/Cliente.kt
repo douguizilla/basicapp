@@ -4,18 +4,18 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class Cliente(
-    var codigo: Int,
-    var nome: String?
+    var nome: String?,
+    var age: Int
 ): Parcelable {
 
     constructor(parcel: Parcel) : this(
-        parcel.readInt(),
-        parcel.readString()
+        parcel.readString(),
+        parcel.readInt()
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(codigo)
+        parcel.writeInt(age)
         parcel.writeString(nome)
     }
 

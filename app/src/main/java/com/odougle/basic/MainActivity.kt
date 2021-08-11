@@ -8,24 +8,32 @@ import com.odougle.basic.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    private var message: String? = null
+    private var clientName: String? = null
+    private var clientAge: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         binding.btnToast.setOnClickListener{
-            message = binding.edtText.text.toString()
-            message?.let {
+            clientName = binding.edtClientNameText.text.toString()
+            clientName?.let {
                 createToast(it)
             }
         }
 
         binding.btnNextActivity.setOnClickListener {
-            message = binding.edtText.text.toString()
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra("TEXT_FROM_ACTIVITY", message)
-            startActivity(intent)
+            clientName = binding.edtClientNameText.text.toString()
+            clientAge = binding.edtClientAgeText.text.toString()
+            if(clientName.isNullOrEmpty() or clientAge.isNullOrEmpty()){
+                createToast("Fill the fields!")
+            }else{
+                val client = Cliente(clientName, clientAge!!.toInt())
+                val intent = Intent(this, SecondActivity::class.java)
+                intent.putExtra("client", client)
+                startActivity(intent)
+            }
         }
+
     }
 
     private fun createToast(message: String){
