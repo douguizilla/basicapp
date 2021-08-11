@@ -4,7 +4,7 @@ Created to implement concepts learned on chapter 3 from book Dominando Android c
 
    - Activity life cycle
    - Intents
-   -- how to send information to other Activity
+    - how to send information to other Activity
    - Explicit and Implicit intents
 
 
