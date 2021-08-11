@@ -9,5 +9,9 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        val message = intent.getStringExtra("TEXT_FROM_ACTIVITY")
+        var text = resources.getString(R.string.hello_text, message)
+        binding.tvHello.text = text
     }
 }

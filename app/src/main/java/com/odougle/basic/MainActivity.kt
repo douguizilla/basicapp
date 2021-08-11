@@ -13,22 +13,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        message = binding.edtText.text.toString()
-
         binding.btnToast.setOnClickListener{
+            message = binding.edtText.text.toString()
             message?.let {
                 createToast(it)
             }
         }
 
         binding.btnNextActivity.setOnClickListener {
+            message = binding.edtText.text.toString()
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("TEXT_FROM_ACTIVITY", message)
             startActivity(intent)
         }
     }
-
-
 
     private fun createToast(message: String){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
