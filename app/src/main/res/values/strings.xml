@@ -9,10 +9,8 @@
     <string name="client_phonenumber_hint_text">Phone number</string>
     <string name="client_address_hint_text">Address</string>
     <string name="error_intent">Can\'t resolve</string>
+    <string name="search_on_web_btn_txt">Search On Web</string>
+    <string name="call_btn_txt">Call</string>
+    <string name="search_address_on_map_btn_txt">Search Address On Map</string>
 
-    <string-array name="intent_actions">
-        <item>Search On Web</item>
-        <item>Call</item>
-        <item>Search Address On Map</item>
-    </string-array>
 </resources>

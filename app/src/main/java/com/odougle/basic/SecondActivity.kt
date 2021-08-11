@@ -20,7 +20,7 @@ class SecondActivity : AppCompatActivity() {
 
         val client = Parcels.unwrap<Cliente?>(intent.getParcelableExtra("client"))
         fillActivityMessage(client)
-        createListView(this, client)
+
     }
 
     private fun openIntentAtPosition(position: Int, client: Cliente) {
@@ -54,15 +54,6 @@ class SecondActivity : AppCompatActivity() {
         }
     }
 
-    private fun createListView(context: Context, client : Cliente){
-        val listView = ListView(context)
-        setContentView(listView)
-        val adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, resources.getStringArray(R.array.intent_actions))
-        listView.adapter = adapter
-        listView.setOnItemClickListener { _, _, position, _ ->
-            openIntentAtPosition(position,client)
-        }
-    }
 
     private fun fillActivityMessage(client: Cliente?){
         client?.let {
