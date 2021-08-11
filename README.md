@@ -10,4 +10,4 @@ Created to implement concepts learned on chapter 3 from book Dominando Android c
 
 Open to new ideas!
 
-My linkedin: Douglas Gomes
+My linkedin: [Douglas Gomes](https://www.linkedin.com/in/douglasgomesdepaula/)
