@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-
     }
 
     private fun createToast(message: String){

@@ -10,20 +10,16 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        fillActivityMessage()
+
+        val client = Parcels.unwrap<Cliente?>(intent.getParcelableExtra("client"))
+        fillActivityMessage(client)
 
     }
 
-    private fun fillActivityMessage(){
-        var clienteName = "Not received"
-        var clienteAge = -1
-
-        val client = Parcels.unwrap<Cliente?>(intent.getParcelableExtra("client"))
+    private fun fillActivityMessage(client: Cliente?){
         client?.let {
-            clienteName = it.name
-            clienteAge = it.age
+            val text = resources.getString(R.string.second_activity_message_text,it.name, it.phoneNumber, it.address)
+            binding.tvMessage.text = text
         }
-        val text = resources.getString(R.string.second_activity_message_text,clienteName, clienteAge)
-        binding.tvMessage.text = text
     }
 }

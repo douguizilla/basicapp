@@ -30,7 +30,7 @@
         android:id="@+id/edtClientAddressText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/client_phonenumber_hint_text"
+        android:hint="@string/client_address_hint_text"
         app:layout_constraintTop_toBottomOf="@+id/edtClientNameText"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="16dp"
