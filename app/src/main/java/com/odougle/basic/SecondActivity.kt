@@ -11,7 +11,7 @@ class SecondActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val message = intent.getStringExtra("TEXT_FROM_ACTIVITY")
-        var text = resources.getString(R.string.hello_text, message)
+        var text = resources.getString(R.string.second_activity_message_text, message)
         binding.tvHello.text = text
     }
 }

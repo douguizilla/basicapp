@@ -3,7 +3,7 @@
     <string name="write_something_here_hint_text">Write something here!</string>
     <string name="show_on_toast_btn_text">show toast</string>
     <string name="next_activity_btn_text">next activity</string>
-    <string name="hello_text">Hello, your text was: %1$s</string>
+    <string name="second_activity_message_text">Client: %1$s \n Age: %2$d</string>
     <string name="main_parcel_button">Parcelable via Intent</string>
     <string name="client_name_hint_text">Client name</string>
     <string name="client_age_hint_text">Client Age</string>
