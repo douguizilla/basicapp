@@ -2,4 +2,5 @@
     <string name="app_name">Basic</string>
     <string name="write_something_here_hint_text">Write something here!</string>
     <string name="show_on_toast_btn_text">show toast</string>
+    <string name="next_activity_btn_text">next activity</string>
 </resources>
