@@ -20,10 +20,11 @@ class SecondActivity : AppCompatActivity() {
 
         val client = Parcels.unwrap<Cliente?>(intent.getParcelableExtra("client"))
         fillActivityMessage(client)
+
         binding.searchClientNameBtn.setOnClickListener {
             val intent: Intent?
             intent = Intent(Intent.ACTION_SEARCH)
-                .putExtra(SearchManager.QUERY, client.name)
+                .putExtra(SearchManager.QUERY, "${client.name}")
             openIntent(intent)
         }
 
@@ -39,7 +40,7 @@ class SecondActivity : AppCompatActivity() {
             val uri: Uri?
             val intent: Intent?
 
-            uri = Uri.parse("tel:"+client.phoneNumber)
+            uri = Uri.parse("tel:${client.phoneNumber}")
             intent = Intent(Intent.ACTION_DIAL, uri)
             openIntent(intent)
         }
