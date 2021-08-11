@@ -10,7 +10,8 @@ import org.parceler.Parcels
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private var clientName: String? = null
-    private var clientAge: String? = null
+    private var clientPhone: String? = null
+    private var clientAddress: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -24,14 +25,13 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnNextActivity.setOnClickListener {
             clientName = binding.edtClientNameText.text.toString()
-            clientAge = binding.edtClientAgeText.text.toString()
+            clientPhone = binding.edtClientPhoneText.text.toString()
+            clientAddress = binding.edtClientAddressText.text.toString()
 
-            if(clientName.isNullOrEmpty() or clientAge.isNullOrEmpty()){
+            if(clientName.isNullOrEmpty() or clientPhone.isNullOrEmpty() or clientAddress.isNullOrEmpty()){
                 createToast("Fill the fields!")
             }else{
-                var name: String = clientName!!
-                var age: Int = clientAge!!.toInt()
-                val client = Cliente(name, age)
+                val client = Cliente(clientName!!, clientPhone!!, clientAddress!!)
                 val intent = Intent(this, SecondActivity::class.java)
                 intent.putExtra("client", Parcels.wrap(client))
                 startActivity(intent)
