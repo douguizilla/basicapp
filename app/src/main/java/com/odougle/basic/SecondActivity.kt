@@ -10,8 +10,15 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val message = intent.getStringExtra("TEXT_FROM_ACTIVITY")
-        var text = resources.getString(R.string.second_activity_message_text, message)
-        binding.tvHello.text = text
+        var clienteName = "Not received"
+        var clienteAge = -1
+
+        val client = intent.getParcelableExtra<Cliente>("client")
+        client?.let { cliente ->
+            clienteName = client.name.toString()
+            clienteAge = client.age
+        }
+        val text = resources.getString(R.string.second_activity_message_text,clienteName, clienteAge)
+        binding.tvMessage.text = text
     }
 }
