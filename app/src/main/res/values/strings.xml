@@ -7,4 +7,10 @@
     <string name="main_parcel_button">Parcelable via Intent</string>
     <string name="client_name_hint_text">Client name</string>
     <string name="client_age_hint_text">Client Age</string>
+    
+    <string-array name="intent_actions">
+        <item>Search On Web</item>
+        <item>Call</item>
+        <item>Search Address On Map</item>
+    </string-array>
 </resources>
