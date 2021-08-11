@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
             if(clientName.isNullOrEmpty() or clientAge.isNullOrEmpty()){
                 createToast("Fill the fields!")
             }else{
-                var age = clientAge!!.toInt()
-                var name = clientName!!
+                var name: String = clientName!!
+                var age: Int = clientAge!!.toInt()
                 val client = Cliente(name, age)
                 val intent = Intent(this, SecondActivity::class.java)
                 intent.putExtra("client", Parcels.wrap(client))
