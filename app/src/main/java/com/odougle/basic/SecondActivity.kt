@@ -10,7 +10,11 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        fillActivityMessage()
 
+    }
+
+    private fun fillActivityMessage(){
         var clienteName = "Not received"
         var clienteAge = -1
 
