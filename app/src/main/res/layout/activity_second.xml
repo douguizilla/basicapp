@@ -18,14 +18,39 @@
         />
 
     <Button
-        android:id="@+id/searchBtn"
+        android:id="@+id/searchClientNameBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tv_message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"
-        android:text="@string/"
+        android:layout_margin="16dp"
+        android:text="@string/search_on_web_btn_txt"
         />
+    <Button
+        android:id="@+id/callClientPhoneBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/searchClientNameBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"
+        android:text="@string/call_btn_txt"
+        />
+
+    <Button
+        android:id="@+id/searchClientAddressBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/callClientPhoneBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"
+        android:text="@string/search_address_on_map_btn_txt"
+        />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

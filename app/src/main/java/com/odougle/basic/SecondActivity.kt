@@ -20,31 +20,31 @@ class SecondActivity : AppCompatActivity() {
 
         val client = Parcels.unwrap<Cliente?>(intent.getParcelableExtra("client"))
         fillActivityMessage(client)
+        binding.searchClientNameBtn.setOnClickListener {
+            val intent: Intent?
+            intent = Intent(Intent.ACTION_SEARCH)
+                .putExtra(SearchManager.QUERY, client.name)
+            openIntent(intent)
+        }
 
-    }
+        binding.searchClientAddressBtn.setOnClickListener {
+            val uri: Uri?
+            val intent: Intent?
+            uri = Uri.parse("geo:0,0?q=${client.address}")
+            intent = Intent(Intent.ACTION_VIEW, uri)
+            openIntent(intent)
+        }
 
-    private fun openIntentAtPosition(position: Int, client: Cliente) {
-        val uri: Uri?
-        val intent: Intent?
-        when(position){
-            0 -> {
-                intent = Intent(Intent.ACTION_SEARCH)
-                    .putExtra(SearchManager.QUERY, client.name)
-                openIntent(intent)
-            }
-            1 -> {
-                uri = Uri.parse("tel:"+client.phoneNumber)
-                intent = Intent(Intent.ACTION_DIAL, uri)
-                openIntent(intent)
-            }
-            2 -> {
-                uri = Uri.parse("geo:0,0?q=${client.address}")
-                intent = Intent(Intent.ACTION_VIEW, uri)
-                openIntent(intent)
-            }
-            else -> finish()
+        binding.callClientPhoneBtn.setOnClickListener {
+            val uri: Uri?
+            val intent: Intent?
+
+            uri = Uri.parse("tel:"+client.phoneNumber)
+            intent = Intent(Intent.ACTION_DIAL, uri)
+            openIntent(intent)
         }
     }
+
 
     private fun openIntent(intent: Intent) {
         if(intent.resolveActivity(packageManager) != null){
