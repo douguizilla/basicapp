@@ -29,18 +29,15 @@ class SecondActivity : AppCompatActivity() {
         }
 
         binding.searchClientAddressBtn.setOnClickListener {
-            val uri: Uri?
+            val uri: Uri? = Uri.parse("geo:0,0?q=${client.address}")
             val intent: Intent?
-            uri = Uri.parse("geo:0,0?q=${client.address}")
             intent = Intent(Intent.ACTION_VIEW, uri)
             openIntent(intent)
         }
 
         binding.callClientPhoneBtn.setOnClickListener {
-            val uri: Uri?
             val intent: Intent?
-
-            uri = Uri.parse("tel:${client.phoneNumber}")
+            val uri: Uri? = Uri.parse("tel:${client.phoneNumber}")
             intent = Intent(Intent.ACTION_DIAL, uri)
             openIntent(intent)
         }
