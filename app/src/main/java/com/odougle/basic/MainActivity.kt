@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.odougle.basic.databinding.ActivityMainBinding
+import org.parceler.Parcels
 
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 var name = clientName!!
                 val client = Cliente(name, age)
                 val intent = Intent(this, SecondActivity::class.java)
-                intent.putExtra("client", client)
+                intent.putExtra("client", Parcels.wrap(client))
                 startActivity(intent)
             }
         }
